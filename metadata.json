@@ -1,0 +1,8 @@
+{
+  "name": "Remix Pirate Esports",
+  "description": "Official website for Pirate Esports — Bangladeshi Free Fire competitive esports organization, FFWS 2026 Fall Runner-Up.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

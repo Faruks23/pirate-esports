@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #070709;
+    color: #e4e4e7;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Angular esports cuts & accents */
+.clip-corner-tr {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.clip-corner-both {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+.clip-angled-button {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.clip-badge {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+/* Red / fiery glow and carbon textures */
+.glow-red {
+  box-shadow: 0 0 35px -5px rgba(220, 38, 38, 0.35);
+}
+
+.glow-orange {
+  box-shadow: 0 0 30px -5px rgba(234, 88, 12, 0.3);
+}
+
+.border-gradient-red {
+  border-image: linear-gradient(to bottom right, #ef4444, #f97316, transparent) 1;
+}
+
+/* Subtle carbon fiber pattern */
+.bg-carbon {
+  background-color: #090a0d;
+  background-image: radial-gradient(rgba(239, 68, 68, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+/* ==========================================================================
+   PREMIUM ESPORTS BUTTON HOVER ANIMATION SUITE
+   ========================================================================== */
+
+@keyframes buttonSheenWave {
+  0% {
+    transform: translateX(-140%) skewX(-24deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(260%) skewX(-24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4), 0 0 40px rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.7), 0 0 65px rgba(249, 115, 22, 0.45);
+  }
+}
+
+/* Universal Premium Button Base */
+.btn-premium,
+.btn-premium-primary,
+.btn-premium-secondary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  will-change: transform, box-shadow;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.28s ease,
+              border-color 0.28s ease,
+              color 0.2s ease;
+}
+
+.btn-premium > *,
+.btn-premium-primary > *,
+.btn-premium-secondary > * {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light sheen pseudo-element running across the whole button */
+.btn-premium::before,
+.btn-premium-primary::before,
+.btn-premium-secondary::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 70%;
+  height: 140%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-24deg);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Primary Button Style (Fiery Red-to-Orange Gradient with Dynamic Flare) */
+.btn-premium-primary {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #b91c1c 100%);
+  background-size: 200% 200%;
+  color: #ffffff;
+  border: 1px solid rgba(254, 202, 202, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(220, 38, 38, 0.45), 0 0 15px rgba(234, 88, 12, 0.25);
+}
+
+.btn-premium-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-position: 100% 100%;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 32px rgba(239, 68, 68, 0.7), 0 0 60px rgba(249, 115, 22, 0.4), 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.btn-premium-primary:hover::before {
+  animation: buttonSheenWave 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.btn-premium-primary:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 0 18px rgba(220, 38, 38, 0.5);
+}
+
+/* Secondary Button Style (Tactical Dark with Radiant Red Border & Ambient Illumination) */
+.btn-premium-secondary {
+  background: #0b0d14;
+  color: #e4e4e7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.btn-premium-secondary::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(239, 68, 68, 0.15) 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(249, 115, 22, 0.15) 80%,
+    transparent 100%
+  );
+}
+
+.btn-premium-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  color: #ffffff;
+  background: #111420;
+  border-color: rgba(239, 68, 68, 0.7);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.35), 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.btn-premium-secondary:hover::before {
+  animation: buttonSheenWave 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.btn-premium-secondary:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Micro-interaction on icons and arrows inside premium buttons */
+.btn-premium:hover svg,
+.btn-premium-primary:hover svg,
+.btn-premium-secondary:hover svg {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-premium,
+  .btn-premium-primary,
+  .btn-premium-secondary {
+    transition: none !important;
+  }
+  .btn-premium:hover,
+  .btn-premium-primary:hover,
+  .btn-premium-secondary:hover {
+    transform: none !important;
+  }
+  .btn-premium::before,
+  .btn-premium-primary::before,
+  .btn-premium-secondary::before {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+
