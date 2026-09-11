@@ -8,6 +8,13 @@ import {
   SponsorshipTier,
   SocialLink
 } from '../types';
+import pirateEsportsLogo from '../assets/images/pirate_esports_logo_1789128861359.jpg';
+import pirateHeroBg from '../assets/images/pirate_hero_bg_1789128846005.jpg';
+import pirateTeamHuddle from '../assets/images/pirate_team_huddle_1789128878450.jpg';
+import playerAzoic from '../assets/images/player_azoic_1789128966903.jpg';
+import playerRasel from '../assets/images/player_rasel_1789128979877.jpg';
+import playerTajz from '../assets/images/player_tajz_1789128935469.jpg';
+import playerToki from '../assets/images/player_toki_1789128952761.jpg';
 
 export const TEAM_INFO = {
   name: 'Pirate Esports',
@@ -20,9 +27,9 @@ export const TEAM_INFO = {
   season: '2026 Competitive Season',
   shortBio:
     'Pirate Esports is a Bangladeshi Free Fire esports organization focused on competitive performance, player development, community engagement and building a strong presence in the esports ecosystem.',
-  logo: '/src/assets/images/pirate_esports_logo_1789128861359.jpg',
-  heroBg: '/src/assets/images/pirate_hero_bg_1789128846005.jpg',
-  teamHuddle: '/src/assets/images/pirate_team_huddle_1789128878450.jpg',
+  logo: pirateEsportsLogo,
+  heroBg: pirateHeroBg,
+  teamHuddle: pirateTeamHuddle,
   keyAchievement: 'FFWS BANGLADESH 2026 FALL — RUNNER-UP',
   officialEmail: 'management@pirateesports.bd',
   businessEmail: 'partnerships@pirateesports.bd',
@@ -63,7 +70,7 @@ export const PLAYERS: Player[] = [
     role: 'Player',
     country: 'Bangladesh',
     countryCode: 'BD',
-    image: '/src/assets/images/player_tajz_1789128935469.jpg',
+    image: playerTajz,
     number: '01',
     stats: [
       { label: 'Role Focus', value: 'In-Game Combat' },
@@ -83,7 +90,7 @@ export const PLAYERS: Player[] = [
     role: 'Player',
     country: 'Bangladesh',
     countryCode: 'BD',
-    image: '/src/assets/images/player_toki_1789128952761.jpg',
+    image: playerToki,
     number: '07',
     stats: [
       { label: 'Role Focus', value: 'Combat Specialist' },
@@ -103,7 +110,7 @@ export const PLAYERS: Player[] = [
     role: 'Player',
     country: 'Bangladesh',
     countryCode: 'BD',
-    image: '/src/assets/images/player_azoic_1789128966903.jpg',
+    image: playerAzoic,
     number: '10',
     stats: [
       { label: 'Role Focus', value: 'Tactical Recon' },
@@ -123,7 +130,7 @@ export const PLAYERS: Player[] = [
     role: 'Player',
     country: 'Bangladesh',
     countryCode: 'BD',
-    image: '/src/assets/images/player_rasel_1789128979877.jpg',
+    image: playerRasel,
     number: '12',
     stats: [
       { label: 'Role Focus', value: 'Squad Coordinator' },
@@ -220,7 +227,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'FFWS Bangladesh 2026 Fall Grand Finals Stage',
     category: 'MATCHES',
     type: 'image',
-    thumbnail: '/src/assets/images/pirate_hero_bg_1789128846005.jpg',
+    thumbnail: pirateHeroBg,
     date: '2026 Season',
     viewsOrBadge: 'GRAND FINALS',
     description: 'Championship arena stage during the decisive Free Fire World Series matches.',
@@ -230,7 +237,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'Pirate Esports Crew Strategic Huddle',
     category: 'TEAM',
     type: 'image',
-    thumbnail: '/src/assets/images/pirate_team_huddle_1789128878450.jpg',
+    thumbnail: pirateTeamHuddle,
     date: '2026 Campaign',
     viewsOrBadge: 'THE CREW',
     description: 'Tactical briefing and match preparation between high-pressure battle royale rounds.',
@@ -240,7 +247,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'TAJZ Clutch Highlights — Zone Push Execution',
     category: 'MATCHES',
     type: 'video',
-    thumbnail: '/src/assets/images/player_tajz_1789128935469.jpg',
+    thumbnail: playerTajz,
     date: 'FFWS Match Day',
     viewsOrBadge: 'MATCH HIGHLIGHT',
     description: 'High-leverage zone breach and elimination sequences by TAJZ during decisive circles.',
@@ -250,7 +257,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'Behind the Scenes — Tournament Boot Camp',
     category: 'BEHIND THE SCENES',
     type: 'image',
-    thumbnail: '/src/assets/images/player_toki_1789128952761.jpg',
+    thumbnail: playerToki,
     date: 'Official Prep',
     viewsOrBadge: 'VLOG & BTS',
     description: 'Intense training schedule, scrim analytics, and equipment check before official game days.',
@@ -260,7 +267,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'Tactical Comms & Communication Flow',
     category: 'BEHIND THE SCENES',
     type: 'video',
-    thumbnail: '/src/assets/images/player_azoic_1789128966903.jpg',
+    thumbnail: playerAzoic,
     date: 'Voice Comms',
     viewsOrBadge: 'COMMS LEAK',
     description: 'Audio breakdown of real-time callouts and fast adaptation under intense teamfights.',
@@ -270,7 +277,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     title: 'Bangladeshi Community Watch Party & Fan Base',
     category: 'COMMUNITY',
     type: 'image',
-    thumbnail: '/src/assets/images/player_rasel_1789128979877.jpg',
+    thumbnail: playerRasel,
     date: 'Community Live',
     viewsOrBadge: 'FAN CREW',
     description: 'Passionate esports supporters across Bangladesh cheering on Pirate Esports during finals.',
