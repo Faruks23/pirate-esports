@@ -1,5 +1,5 @@
 import React from 'react';
-import { SPONSORS } from '../data/esportsData';
+import { SPONSORS, TEAM_INFO } from '../data/esportsData';
 import { Handshake, ArrowRight, ShieldAlert, Sparkles } from 'lucide-react';
 
 interface SponsorsProps {
@@ -42,13 +42,22 @@ export const Sponsors: React.FC<SponsorsProps> = ({ onBecomeSponsor }) => {
               </div>
 
               {/* Logo Card Center */}
-              <div className="my-6 w-full h-20 rounded-lg bg-black/50 border border-zinc-800/80 flex flex-col items-center justify-center p-3 group-hover:border-red-500/40 transition-colors">
-                <span className="font-heading text-xl sm:text-2xl font-black tracking-wider text-zinc-300 group-hover:text-white uppercase transition-colors">
-                  {sponsor.name}
-                </span>
-                <span className="text-[10px] tracking-widest uppercase text-red-400 font-bold">
-                  {sponsor.subText}
-                </span>
+              <div className="my-6 w-full h-24 rounded-lg bg-black/50 border border-zinc-800/80 flex items-center gap-3 p-3 group-hover:border-red-500/40 transition-colors">
+                <div className="w-14 h-14 shrink-0 rounded-md overflow-hidden border border-red-500/40 bg-zinc-950">
+                  <img
+                    src={TEAM_INFO.logo}
+                    alt={`${sponsor.name} demo logo`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="min-w-0 text-left">
+                  <span className="font-heading text-lg sm:text-xl font-black tracking-wider text-zinc-300 group-hover:text-white uppercase transition-colors block truncate">
+                    {sponsor.name}
+                  </span>
+                  <span className="text-[10px] tracking-widest uppercase text-red-400 font-bold block">
+                    {sponsor.subText}
+                  </span>
+                </div>
               </div>
 
               {/* Category info */}
